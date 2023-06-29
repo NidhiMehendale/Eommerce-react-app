@@ -1,0 +1,24 @@
+.button{
+    display: flex;
+    text-align: end;
+    border-color: lightblue;
+
+}
+
+.cart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #8a2b06;
+    padding: 1rem 0;
+    margin: 1rem 0;
+  }
+
+.cart-total{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.2rem;
+    margin: 20px;
+    margin-right: 2px;
+
+  }

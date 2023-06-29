@@ -1,6 +1,7 @@
 import React from "react";
 import ProductItems from "./ProductItems";
-import Album1 from '../assets/Album1.jpg'
+
+
 const productsArr = [
   {
     id: 1,

@@ -1,7 +1,6 @@
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.navigation-container {
+    text-align: center;
+    color: white;
     font-weight: bold;
   }
 
@@ -12,6 +11,11 @@
     background-color: grey;
     color: white;
     margin-top: 4px;
+  }
+
+  .button {
+    display: flex;
+    float: right;
   }
   
  
