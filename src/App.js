@@ -3,6 +3,7 @@ import AvailableProducts from './components/AvailableProducts';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Cart from './components/Cart';
+import CartProvider from './store/CartProvider';
 
 function App() {
   const [cartIsShown,setCartIsShown] = useState(false);
@@ -15,14 +16,14 @@ function App() {
     setCartIsShown(false);
   };
   return (
-    <div className="App">
+    <CartProvider>
       <Header onShowCart={showCartHandler} /> 
       <AvailableProducts />
       <Footer />
       <div>
      {cartIsShown && <Cart  onClose={hideCartHandler}/>}
       </div>
-    </div>
+    </CartProvider>
 
   );
 }

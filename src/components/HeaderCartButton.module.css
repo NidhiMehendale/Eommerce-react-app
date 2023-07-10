@@ -1,0 +1,6 @@
+.button-class{
+    border-color: lightblue;
+    display: flex;
+    justify-content: space-between;
+    background-color: none;
+}

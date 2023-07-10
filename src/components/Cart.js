@@ -1,44 +1,46 @@
 
+import { useContext } from 'react';
 import CartItems from "./CartItems";
 import React from "react";
 import classes from './Cart.module.css';
 
 import Modal from "./Modal";
 import { Button } from "react-bootstrap";
-   const cartElements = [
-    {
-    title: 'Colors',
-    price: 100,
-    imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
-    quantity: 2,  
-    }, 
-    {  
-      title: 'Black',   
-      price: 50,  
-      imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%202.png', 
-      quantity: 3,
-      
-      },
-      {
-      title: 'Yellow',
-      price: 70,
-      imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
-      quantity: 1,
-      },  
-    ]
+import CartContext from '../store/cart-context';
+   
  
  const Cart = (props) => {
+  const cartCtx = useContext(CartContext);
 
-    const cartitems = cartElements.map(item => (
-        <CartItems 
-          key={item.id} 
-          id={item.id}
-          title={item.title} 
+  const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
+
+
+  const cartItemRemoveHandler = (id) => {
+    cartCtx.removeItem(id);
+  };
+
+  const cartItemAddHandler = (item) => {
+    cartCtx.addItem({...item,amount:1});
+  };
+
+  const cartItems = (
+    <ul>
+      {cartCtx.items.map((item) => (
+        <CartItems
+          key={item.id}
+          title={item.title}
           price={item.price}
-          imageUrl = {item.imageUrl}
-          quantity={item.quantity}       
-        /> 
-      ));
+          amount={item.amount}
+          imageUrl={props.imageUrl}
+          onRemove={cartItemRemoveHandler.bind(null, item.id)}
+          onAdd={cartItemAddHandler.bind(null, item)}
+         
+        />
+      ))}
+    </ul>
+  );
+
+   
 
    return (
     <Modal>
@@ -49,10 +51,10 @@ import { Button } from "react-bootstrap";
         <span>PRICE</span>
         <span>QUANTITY</span>
      </div>
-      {cartitems}
+      {cartItems}
       <span className={classes['cart-total']}>
         <span>Total</span>
-        <span></span>
+        <span>{totalAmount}</span>
     </span>
      
     </Modal>

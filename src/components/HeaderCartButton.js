@@ -1,12 +1,27 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import { useContext} from 'react';
+import CartContext from "../store/cart-context";
+import classes from './HeaderCartButton.module.css';
 
 const HeaderCartButton = (props) => {
+  const cartCtx = useContext(CartContext);
+
+  const { items } = cartCtx;
+
+  const numberOfCartItems = items.reduce((curNumber, item) => curNumber + item.amount, 0);
+  
+
+  console.log(numberOfCartItems);
   return (
-    <Button variant="outline-info" onClick={props.onClick}>
-      <span>Cart</span>
-      <span>0</span>
-    </Button> 
+    <button className={classes['button-class']} onClick={props.onClick}>
+      <div>
+        Cart
+      </div>
+      <div>
+        {numberOfCartItems}
+      </div>
+      
+    </button> 
   );
 };
 

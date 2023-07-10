@@ -8,10 +8,10 @@ const Footer = () => {
   return (
      <div>
      <footer>
-     <div class={classes['footer-title']}>
+     <div className={classes['footer-title']}>
          The Generics
      </div>
-     <div class={classes['footer-icons']}>
+     <div className={classes['footer-icons']}>
          <ul>
              <li><a href="https://www.youtube.com">
                <img src={Image1} alt="yutube"/>

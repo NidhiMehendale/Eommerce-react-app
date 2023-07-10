@@ -1,0 +1,14 @@
+.container-grid{
+    display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  grid-template-rows: repeat(2, 1fr); /* Two rows */
+  gap: 1px; /* Gap between items */
+   
+  }
+
+  .grid-container li {
+    background-color: #ddd;
+   
+ 
+  }
+ 
