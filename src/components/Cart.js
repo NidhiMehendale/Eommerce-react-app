@@ -5,7 +5,6 @@ import React from "react";
 import classes from './Cart.module.css';
 
 import Modal from "./Modal";
-import { Button } from "react-bootstrap";
 import CartContext from '../store/cart-context';
    
  
@@ -44,8 +43,8 @@ import CartContext from '../store/cart-context';
 
    return (
     <Modal>
-     <Button onClick={props.onClose} variant="outline-secondary" className={classes.button}>X</Button>
-     <h3 style={{textAlign:'center'}}>Cart</h3>
+     <button onClick={props.onClose} className={classes.button}>X</button>
+     <h3 className={classes['cart-text']}>Cart</h3>
      <div className={classes.cart}>    
         <span>ITEM</span>  
         <span>PRICE</span>

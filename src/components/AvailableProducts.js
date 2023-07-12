@@ -5,25 +5,25 @@ import ProductItems from "./ProductItems";
 const productsArr = [
   {
     id: 1,
-    title: 'Colors',
+    title: 'Album 1',
     price: 100,  
     imageUrl : 'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
   },
   {
     id: 2,
-    title: 'Black and white Colors',
+    title: 'Album 2',
     price: 50,
     imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
   },
   {
     id: 3,
-    title: 'Yellow and Black Colors',
+    title: 'Album 3',
     price: 70,
     imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
   },
   {
     id: 4,
-    title: 'Blue Color',
+    title: 'Album 4',
     price: 100,
     imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%204.png',
     
@@ -43,6 +43,9 @@ const AvailableProducts = () => {
 
   return (
     <section>    
+    <div id="music" style={{textAlign:'center'}}>
+    <h2>MUSIC</h2>
+ </div>
       <ul>
         {productsList}
       </ul>       

@@ -6,17 +6,16 @@ const CartItems = (props) => {
   const price = `$${props.price.toFixed(2)}`;
   
   return (
-    <li>   
+    <li >   
         <div className={classes['cart-item']}>
-         
-          <div>  
+          <span>  
             {props.title} 
-          </div>
-          <div>{price}</div>
-          <div>
+          </span>
+          <span>{price}</span>
+          <span>
               <span>{props.amount}</span>
-              <span> <Button variant="danger" onClick={props.onRemove}>REMOVE</Button></span> 
-          </div>
+              <span> <Button variant="danger" onClick={props.onRemove}>Remove</Button></span> 
+          </span>
         </div>
        
     </li>

@@ -1,5 +1,6 @@
 import Input from "./Imput";
 import { useRef } from 'react';
+import classes from './ProductForm.module.css';
 
 const ProductForm = (props) => {
    
@@ -17,7 +18,7 @@ const ProductForm = (props) => {
   };
 
     return (
-        <form  onSubmit={submitHandler}>
+        <form className={classes.form} onSubmit={submitHandler}>
           <Input
             ref={amountInputRef}
             label='Amount'
@@ -28,7 +29,7 @@ const ProductForm = (props) => {
               defaultValue: '1',
             }}
           />
-          <button>Add to Cart</button>
+          <button>Add</button>
       
         </form>
       );

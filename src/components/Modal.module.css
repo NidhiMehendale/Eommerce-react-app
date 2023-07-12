@@ -1,16 +1,27 @@
 .modal {
-    position: fixed;
-    top: 9vh;
-    right: 0%;
-    height: 100%;
-    width: 30%;
-    background-color: white;
-    padding: 2rem;
-    z-index: 30;
-    border-bottom: 2px solid #8a2b06;
-    border-width: 9px 9px 9px 0px;
-    border-color: white;
+  position: fixed;
+  top: 50px;
+  right: 0%;
+  height: 95%;
+  width: 30%;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(177, 103, 103);
+  padding: 2rem;
+ 
+  border-bottom: 2px solid #8a2b06;
+
+ 
     
   }
+  /* margin: 0px;
+  position: fixed;
+  top: 50px;
+  height: 95%;
+  right: 0;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(177, 103, 103);
+  min-height: 50vh;
+  width: 30%; */
 
+ 
   

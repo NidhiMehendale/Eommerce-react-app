@@ -15,11 +15,14 @@ const HeaderCartButton = (props) => {
   return (
     <button className={classes['button-class']} onClick={props.onClick}>
       <div>
-        Cart
+          <div>
+           Cart
+        </div>
+        <div className={classes['cart-number']}>
+          {numberOfCartItems}
+        </div>
       </div>
-      <div>
-        {numberOfCartItems}
-      </div>
+      
       
     </button> 
   );

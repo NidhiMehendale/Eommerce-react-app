@@ -1,6 +1,4 @@
 import React, {useContext} from 'react';
-import { Container } from 'react-bootstrap';
-
 
 import CartContext from "../store/cart-context";
 import ProductForm from './ProductForm';
@@ -22,9 +20,8 @@ const ProductItems = (props) => {
  };
 
     return (
-     <Container className={classes['container-grid']}>    
-         <li>
-         <div>
+     <div className={classes['container-grid']}>    
+         <li>     
              <h3>{props.title}</h3>
              <div>
                <img src={props.imageUrl} alt={props.title} />
@@ -33,12 +30,10 @@ const ProductItems = (props) => {
              <span>{price}</span> 
              </div>
              <div>
-             <ProductForm  onAddToCart={addToCartHandler}/>
-             </div>
-         </div>
-         
+             <ProductForm  onAddToCart={addToCartHandler}/>       
+             </div>     
          </li>
-     </Container>
+     </div>
   
     );
    
