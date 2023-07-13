@@ -1,0 +1,78 @@
+.header{
+    height: 25em;
+    background-color: grey;
+    color: white;
+    margin-top: 4px;
+  }
+  
+  .header h2{
+    padding: 1px;
+    font-size: 45px;
+    margin: 10px 5rem;
+  
+  }
+  
+  .latest-album{
+    display: block;
+    border: 1px solid #56CCF2;
+    padding: 15px 30px;
+    font-size: 23px;
+    text-align: center;
+    margin: 5rem 30rem;
+    background: inherit;
+    cursor: pointer;
+    color: white;
+  
+  }
+  
+  .play-btn {
+    cursor: pointer;
+    display: block;
+    border: 2px solid #56CCF2;
+    border-radius: 70%;
+    padding: 15px 24px;
+    font-size: 30px;
+    font-weight: 200;
+    margin: 20px auto;
+    background: inherit;
+    color: #56CCF2;
+  }
+  
+  .tours-container{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2px 30px;
+  }
+
+  section h2{
+    font-family: "Metal Mania";
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.tour-item{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+    padding: 1rem 1rem;
+    margin: 2px 0;
+    
+}
+
+.buy-btn {
+    width: 20%;
+    background: #56CCF2;
+    color: white;
+    border: none;
+    padding: 2px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

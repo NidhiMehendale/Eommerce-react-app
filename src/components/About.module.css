@@ -1,17 +1,25 @@
 .about{
-    max-width: 900px;
-    margin: 0 auto;
+    width:100%;
+    margin : 0 auto;
     font-size: 22px;
 }
 
-section h2{
+.about h2{
     font-family: "Metal Mania";
     text-align: center;
     padding: 20px;
     font-size: 30px;
 }
 
-section p{
+.about img {
+    width: "230px";
+    margin:20px 50px;
+    height:230px;
+    border-radius : 80%;
+    float:left;
+}
+
+.about p{
     font-size: 17px;
     margin: 20px;
     color: #777;

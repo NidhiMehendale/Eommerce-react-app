@@ -7,6 +7,7 @@ import CartProvider from './store/CartProvider';
 
 import AboutPage from './components/About';
 import { Switch, BrowserRouter as  Route } from "react-router-dom";
+import HomePage from './components/Home';
 
 function App() {
   const [cartIsShown,setCartIsShown] = useState(false);
@@ -23,7 +24,9 @@ function App() {
         <Route path="/about">
           <AboutPage />
         </Route>
-    
+       <Route path="/home">
+         <HomePage />
+       </Route>
        <CartProvider> 
         <Header onShowCart={showCartHandler} /> 
         <AvailableProducts />

@@ -9,12 +9,11 @@ const Header = (props) => {
            <Navbar bg="dark" data-bs-theme="dark">
             <Container className="justify-content-center">
             <Nav>
-            <NavLink href="/home">HOME</NavLink>
+            <NavLink href="/home" to="/home">HOME</NavLink>
             <NavLink href="/store">STORE</NavLink>
             <Nav.Link
             href="/about"
-            to="/about"
-          >
+            to="/about">
             ABOUT
           </Nav.Link>
           </Nav>
