@@ -15,6 +15,7 @@ const HomePage = () => {
         to="/about">
         ABOUT
     </NavLink>
+    <NavLink href="/contactUs" to="/contactUs">CONTACTUS</NavLink>
     </Nav>
         </Container>
     

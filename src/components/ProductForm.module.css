@@ -1,7 +1,7 @@
 .form {
     display: flex;
-    justify-content: space-between;
-    width:55%;
+    justify-content: center;
+    width:85%;
 }
 
 .form Input {

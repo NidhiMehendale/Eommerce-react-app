@@ -5,17 +5,14 @@ import HeaderCartButton from './HeaderCartButton';
 
 const Header = (props) => {
     return (
-        <div >   
+        <div>   
            <Navbar bg="dark" data-bs-theme="dark">
             <Container className="justify-content-center">
             <Nav>
             <NavLink href="/home" to="/home">HOME</NavLink>
             <NavLink href="/store">STORE</NavLink>
-            <Nav.Link
-            href="/about"
-            to="/about">
-            ABOUT
-          </Nav.Link>
+            <NavLink href="/about" to="/about">ABOUT</NavLink>
+            <NavLink href="/contactUs" to="/contactUs">CONTACTUS</NavLink>
           </Nav>
             </Container>
            <HeaderCartButton onClick={props.onShowCart}/>

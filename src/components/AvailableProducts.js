@@ -1,6 +1,6 @@
 import React from "react";
 import ProductItems from "./ProductItems";
-
+import  './AvailableProducts.module.css';
 
 const productsArr = [
   {
@@ -44,8 +44,8 @@ const AvailableProducts = () => {
   return (
     <section>    
     <div id="music" style={{textAlign:'center'}}>
-    <h2>MUSIC</h2>
- </div>
+      <h2>MUSIC</h2>
+    </div>
       <ul>
         {productsList}
       </ul>       

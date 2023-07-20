@@ -3,7 +3,7 @@ import React, {useContext} from 'react';
 import CartContext from "../store/cart-context";
 import ProductForm from './ProductForm';
 
-import classes from './ProductItems.module.css';
+import './ProductItems.module.css';
 
 const ProductItems = (props) => {
   const cartCtx = useContext(CartContext);
@@ -20,7 +20,7 @@ const ProductItems = (props) => {
  };
 
     return (
-     <div className={classes['container-grid']}>    
+     <div>    
          <li>     
              <h3>{props.title}</h3>
              <div>
@@ -29,9 +29,9 @@ const ProductItems = (props) => {
              <div>
              <span>{price}</span> 
              </div>
-             <div>
+           
              <ProductForm  onAddToCart={addToCartHandler}/>       
-             </div>     
+            
          </li>
      </div>
   
