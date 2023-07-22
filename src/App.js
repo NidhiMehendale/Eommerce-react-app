@@ -9,10 +9,12 @@ import AboutPage from './components/About';
 import { Switch, BrowserRouter as  Route } from "react-router-dom";
 import HomePage from './components/Home';
 import ContactUs from './components/ContactUs';
+import ProductDetail from './components/ProductDetail';
 
 function App() {
   const [cartIsShown,setCartIsShown] = useState(false);
   const [error, setError] = useState(null);
+
   const showCartHandler = () => {
     setCartIsShown(true);
   };
@@ -47,26 +49,35 @@ function App() {
     content = <p>{error}</p>;
   }
   return (
-    <Switch>
-        <Route path="/about">
-          <AboutPage />
-        </Route>
-       <Route path="/home">
-         <HomePage />
-       </Route>
-       <Route path="/contactUs">
-        <ContactUs onAddContact={addContactHandler}/>
-       </Route>
-       
-       <CartProvider> 
+    <div>
+     <Switch> 
+      <Route path="/about">
+      <AboutPage />
+    </Route>
+   <Route path="/home">
+     <HomePage />
+   </Route>
+   <Route path="/contactUs">
+    <ContactUs onAddContact={addContactHandler}/>
+   </Route>
+   <Route path="/store">
+     <Header onShowCart={showCartHandler}/>
+     <AvailableProducts />
+     <Footer />
+   </Route>
+   </Switch>
+   <CartProvider>
+   <ProductDetail />
         <Header onShowCart={showCartHandler} /> 
-        <AvailableProducts />
+        <AvailableProducts /> 
         <Footer />
        {cartIsShown && <Cart  onClose={hideCartHandler}/>}  
        <p>{content}</p>
       </CartProvider>  
+     
+      </div>
       
-    </Switch>
+   
 
    
 
