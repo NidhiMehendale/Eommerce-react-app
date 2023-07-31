@@ -10,8 +10,6 @@ const HeaderCartButton = (props) => {
 
   const numberOfCartItems = items.reduce((curNumber, item) => curNumber + item.amount, 0);
   
-
-  console.log(numberOfCartItems);
   return (
     <button className={classes['button-class']} onClick={props.onClick}>
       <div>

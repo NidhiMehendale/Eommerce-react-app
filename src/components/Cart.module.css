@@ -27,7 +27,7 @@
 
 .cart{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     border-bottom: 2px solid #8a2b06;
     padding: 1rem 0;
@@ -41,4 +41,17 @@
     margin: 20px;
     margin-right: 2px;
 
+  }
+
+  .purchase{
+    font: inherit;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #8a2b06;
+    padding: 0.5rem 2rem;
+    border-radius: 25px;
+    margin-left: 1rem;
+    background-color: #8a2b06;
+    color:white;
+    text-align: center;
   }

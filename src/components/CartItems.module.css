@@ -5,7 +5,6 @@
   border-bottom: 2px solid #8a2b06;
   padding: 1rem 0;
   margin: 1px 0;
-  
   }
 
   li{
@@ -22,3 +21,18 @@
   border-bottom: 2px solid #8a2b06;
   padding: 1rem 0;
   margin: 1rem 0; */
+
+  .actions{
+    font: inherit;
+    font-weight: bold;
+    font-size: 1.25rem;
+    border: 1px solid #8a2b06;
+    width: 3rem;
+    text-align: center;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    margin-right: 6px;
+  }
+
+ 

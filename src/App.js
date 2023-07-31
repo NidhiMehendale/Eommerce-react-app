@@ -1,19 +1,25 @@
-import React,{useState}  from 'react';
+import React,{useState , useContext}  from 'react';
 import AvailableProducts from './components/AvailableProducts';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Cart from './components/Cart';
 import CartProvider from './store/CartProvider';
-
 import AboutPage from './components/About';
 import { Switch, BrowserRouter as  Route } from "react-router-dom";
 import HomePage from './components/Home';
 import ContactUs from './components/ContactUs';
-import ProductDetail from './components/ProductDetail';
+import LoginPage from './components/login/login';
+import Demo from './components/Demo';
+
+import AuthContext from './store/auth-context';
+
 
 function App() {
   const [cartIsShown,setCartIsShown] = useState(false);
   const [error, setError] = useState(null);
+
+const authCtx = useContext(AuthContext);
+console.log("auth-login",authCtx.isLoggedIn);
 
   const showCartHandler = () => {
     setCartIsShown(true);
@@ -39,50 +45,49 @@ function App() {
     }catch(error){
        setError(error.message);
     }
-  
 
   }
 
-  let content = <p>Network Error</p>;
+  let content = <p></p>;
 
   if (error) {
     content = <p>{error}</p>;
   }
+
   return (
-    <div>
-     <Switch> 
-      <Route path="/about">
-      <AboutPage />
-    </Route>
-   <Route path="/home">
-     <HomePage />
-   </Route>
-   <Route path="/contactUs">
-    <ContactUs onAddContact={addContactHandler}/>
-   </Route>
-   <Route path="/store">
-     <Header onShowCart={showCartHandler}/>
-     <AvailableProducts />
-     <Footer />
-   </Route>
-   </Switch>
-   <CartProvider>
-   <ProductDetail />
+    <Switch>
+      <Route path="/about"> 
+           <AboutPage /> 
+         </Route> 
+  
+        <Route path="/home">
+          <HomePage />
+        </Route>
+        <Route path="/demo">
+         <Demo />
+        </Route>
+        <Route path="/contactUs">
+         <ContactUs onAddContact={addContactHandler}/>
+        </Route>
+        
+        <Route path="/login">
+          <LoginPage />
+        </Route>
+
+        
+       <Route path="/">
+        <CartProvider>
         <Header onShowCart={showCartHandler} /> 
-        <AvailableProducts /> 
-        <Footer />
-       {cartIsShown && <Cart  onClose={hideCartHandler}/>}  
-       <p>{content}</p>
-      </CartProvider>  
-     
-      </div>
-      
-   
+         <AvailableProducts />
+         <Footer />
+        {cartIsShown && <Cart  onClose={hideCartHandler}/>}  
+        {content}
+       </CartProvider>  
+       </Route>
+     </Switch>
 
-   
 
-   
-
+  
   );
 }
 

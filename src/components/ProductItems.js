@@ -17,6 +17,7 @@ const ProductItems = (props) => {
       title : props.title,
       amount :amount,
       price: props.price,
+      imageURL: props.imageURL,
     })
  };
 
@@ -29,10 +30,8 @@ const ProductItems = (props) => {
              </div>
              <div>
              <span>{price}</span> 
-             </div>
-           
-             <ProductForm  onAddToCart={addToCartHandler}/>       
-            
+             </div>      
+             <ProductForm  onAddToCart={addToCartHandler}/>                
          </li>
      </div>
   

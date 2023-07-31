@@ -50,7 +50,7 @@ const AvailableProducts = () => {
     </div>
       <ul>
         {productsList}
-      </ul>       
+      </ul>     
     </section>
   );
 };

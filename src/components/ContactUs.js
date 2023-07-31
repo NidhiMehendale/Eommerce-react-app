@@ -53,7 +53,7 @@ const ContactUs = (props) => {
     </div>
     <div className={classes.control}>
       <label htmlFor='number'>Phone</label>
-      <input type='number' id='number' ref={phoneRef} />
+      <input type='text' id='number' ref={phoneRef} />
     </div>
     <button className={classes.button}>Submit</button>
   </form>

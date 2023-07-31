@@ -30,39 +30,39 @@ const HomePage = () => {
   <h2>TOURS</h2>
   
       <div className={classes['tour-item']}>
-          <span class="tour-date">JUL16</span>
-          <span class="tour-place">DETROIT,MI</span>
-          <span class="tour-spec-place">DTE ENERGY MUSIC THEATRE</span>
+          <span >JUL16</span>
+          <span >DETROIT,MI</span>
+          <span >DTE ENERGY MUSIC THEATRE</span>
           <button className={classes['buy-btn']}>BUY TICKETS</button>
       </div>
       <div className={classes['tour-item']}>
-          <span class="tour-date">JUL19</span>
-          <span class="tour-place">TORONTO,ON</span>
-          <span class="tour-spec-place">BUDWEISER STAGE</span>
+          <span >JUL19</span>
+          <span >TORONTO,ON</span>
+          <span >BUDWEISER STAGE</span>
           <button className={classes['buy-btn']}>BUY TICKETS</button>
       </div>
       <div className={classes['tour-item']}>
-          <span class="tour-date">JUL 22</span>
-          <span class="tour-place">BRISTOW, VA</span>
-          <span class="tour-spec-place">JIGGY LUBE LIVE</span>
+          <span >JUL 22</span>
+          <span >BRISTOW, VA</span>
+          <span >JIGGY LUBE LIVE</span>
           <button className={classes['buy-btn']}>BUY TICKETS</button>
       </div>
       <div className={classes['tour-item']}>
-          <span class="tour-date">JUL 29</span>
-          <span class="tour-place">PHOENIX, AZ</span>
-          <span class="tour-spec-place">AK-CHIN PAVILION</span>
+          <span >JUL 29</span>
+          <span >PHOENIX, AZ</span>
+          <span >AK-CHIN PAVILION</span>
           <button className={classes['buy-btn']}>BUY TICKETS</button>
       </div>
       <div className={classes['tour-item']}>
-          <span class="tour-date">AUG 2</span>
-          <span class="tour-place">LAS VEGAS, NV</span>
-          <span class="tour-spec-place">T-MOBILE ARENA</span>
+          <span >AUG 2</span>
+          <span >LAS VEGAS, NV</span>
+          <span>T-MOBILE ARENA</span>
           <button className={classes['buy-btn']}>BUY TICKETS</button>
       </div>
       <div className={classes['tour-item']}>
-          <span class="tour-date">AUG 7</span>
-          <span class="tour-place">CONCORD, CA</span>
-          <span class="tour-spec-place">CONCORD PAVILION</span>
+          <span >AUG 7</span>
+          <span >CONCORD, CA</span>
+          <span >CONCORD PAVILION</span>
           <button className={classes['buy-btn']}>BUY TICKETS</button>
       </div>
   

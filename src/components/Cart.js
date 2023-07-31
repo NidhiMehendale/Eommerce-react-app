@@ -3,7 +3,6 @@ import { useContext } from 'react';
 import CartItems from "./CartItems";
 import React from "react";
 import classes from './Cart.module.css';
-
 import Modal from "./Modal";
 import CartContext from '../store/cart-context';
    
@@ -12,7 +11,7 @@ import CartContext from '../store/cart-context';
   const cartCtx = useContext(CartContext);
 
   const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
-
+  const hasItems = cartCtx.items.length === 0;
 
   const cartItemRemoveHandler = (id) => {
     cartCtx.removeItem(id);
@@ -20,6 +19,10 @@ import CartContext from '../store/cart-context';
 
   const cartItemAddHandler = (item) => {
     cartCtx.addItem({...item,amount:1});
+  };
+
+  const onPurchase = (id) => {
+    alert('Thanks for your order');
   };
 
   const cartItems = (
@@ -30,7 +33,7 @@ import CartContext from '../store/cart-context';
           title={item.title}
           price={item.price}
           amount={item.amount}
-          imageUrl={props.imageUrl}
+          imageUrl={item.imageUrl}
           onRemove={cartItemRemoveHandler.bind(null, item.id)}
           onAdd={cartItemAddHandler.bind(null, item)}
          
@@ -40,22 +43,20 @@ import CartContext from '../store/cart-context';
   );
 
    
-
    return (
     <Modal>
      <button onClick={props.onClose} className={classes.button}>X</button>
      <h3 className={classes['cart-text']}>Cart</h3>
-     <div className={classes.cart}>    
-        <span>ITEM</span>  
-        <span>PRICE</span>
-        <span>QUANTITY</span>
-     </div>
       {cartItems}
-      <span className={classes['cart-total']}>
-        <span>Total</span>
-        <span>{totalAmount}</span>
-    </span>
-     
+      {hasItems && <p style={{textAlign:'center'}}>YOUR CART IS EMPTY</p>}
+      <div className={classes['cart-total']}>
+        <div style={{marginRight:'12px'}}>Total</div>
+        <div>{totalAmount}</div>
+    </div>
+    <div style={{display:'flex',justifyContent:'center'}}>
+      <button onClick={onPurchase} className={classes.purchase}>Purchase</button>
+    </div>
+    
     </Modal>
 
    );

@@ -10,9 +10,10 @@ const Header = (props) => {
             <Container className="justify-content-center">
             <Nav>
             <NavLink href="/home" to="/home">HOME</NavLink>
-            <NavLink href="/store">STORE</NavLink>
+            <NavLink href="/store" to="/store">STORE</NavLink>
             <NavLink href="/about" to="/about">ABOUT</NavLink>
             <NavLink href="/contactUs" to="/contactUs">CONTACTUS</NavLink>
+            <NavLink href="/login" to="/login">LOGIN</NavLink>
           </Nav>
             </Container>
            <HeaderCartButton onClick={props.onShowCart}/>
