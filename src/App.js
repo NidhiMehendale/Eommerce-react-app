@@ -3,13 +3,13 @@ import AvailableProducts from './components/AvailableProducts';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Cart from './components/Cart';
-import CartProvider from './store/CartProvider';
+//import CartProvider from './store/CartProvider';
 import AboutPage from './components/About';
 import { Switch, BrowserRouter as  Route } from "react-router-dom";
 import HomePage from './components/Home';
 import ContactUs from './components/ContactUs';
 import LoginPage from './components/login/login';
-import Demo from './components/Demo';
+
 
 import AuthContext from './store/auth-context';
 
@@ -56,6 +56,9 @@ console.log("auth-login",authCtx.isLoggedIn);
 
   return (
     <Switch>
+    <Route path="/" exact>
+    <LoginPage />
+  </Route>
       <Route path="/about"> 
            <AboutPage /> 
          </Route> 
@@ -63,27 +66,23 @@ console.log("auth-login",authCtx.isLoggedIn);
         <Route path="/home">
           <HomePage />
         </Route>
-        <Route path="/demo">
-         <Demo />
+        <Route path="/login">
+         <LoginPage />
         </Route>
         <Route path="/contactUs">
          <ContactUs onAddContact={addContactHandler}/>
         </Route>
         
-        <Route path="/login">
-          <LoginPage />
-        </Route>
-
         
-       <Route path="/">
-        <CartProvider>
+      <Route path="/store">
         <Header onShowCart={showCartHandler} /> 
          <AvailableProducts />
          <Footer />
         {cartIsShown && <Cart  onClose={hideCartHandler}/>}  
         {content}
-       </CartProvider>  
-       </Route>
+        </Route>
+
+      
      </Switch>
 
 
