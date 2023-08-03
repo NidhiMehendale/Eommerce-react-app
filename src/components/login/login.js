@@ -2,7 +2,7 @@ import { useState, useRef, useContext ,useEffect} from 'react';
 import { useHistory } from 'react-router-dom';
 import classes from './login.module.css';
 import AuthContext from '../../store/auth-context';
-import Header from '../Header';
+
 
 const LoginPage = () => {
   const history = useHistory();
@@ -80,12 +80,11 @@ const LoginPage = () => {
           alert(err.message)
       });
 
-
+      window.location.reload();
   };
 
   return (
-  <div> 
-    <Header />
+ 
     <section className={classes.auth}>
      
       <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
@@ -116,7 +115,7 @@ const LoginPage = () => {
         </div>
       </form>
     </section>
-    </div>
+ 
   );
 };
 

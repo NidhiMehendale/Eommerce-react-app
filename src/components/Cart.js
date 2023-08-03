@@ -1,17 +1,19 @@
 
-import { useContext } from 'react';
+import React,{ useContext, useEffect} from 'react';
 import CartItems from "./CartItems";
-import React from "react";
 import classes from './Cart.module.css';
 import Modal from "./Modal";
 import CartContext from '../store/cart-context';
-   
+import AuthContext from '../store/auth-context';
+
  
  const Cart = (props) => {
   const cartCtx = useContext(CartContext);
+  const authCtx = useContext(AuthContext);
 
   const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
   const hasItems = cartCtx.items.length === 0;
+
 
   const cartItemRemoveHandler = (id) => {
     cartCtx.removeItem(id);
@@ -24,6 +26,45 @@ import CartContext from '../store/cart-context';
   const onPurchase = (id) => {
     alert('Thanks for your order');
   };
+  
+  // useEffect(() => {
+  //   console.log('useeffect of cart')
+  //   // Function to add cart items to the backend service when the user adds a product to the cart
+  //   const addCartItemsToBackend = async () => {
+  //     try {
+  //       await fetch(`https://crudcrud.com/api/aebab6f1cc4746f7ac3b15153ac50d00/cart/${encodeURIComponent(authCtx.idToken)}`, {
+  //         method: 'POST',
+  //         headers: {
+  //           'Content-Type': 'application/json',
+  //         },
+  //         body: JSON.stringify(cartCtx.items),
+  //       });
+  //     } catch (error) {
+  //       console.error('Error while adding cart items to backend:', error);
+  //     }
+  //   };
+
+  //   addCartItemsToBackend();
+  // });
+
+
+  // useEffect(() => {
+  //   // Function to retrieve cart items from the backend service when the cart component mounts
+  //   const getCartItemsFromBackend = async () => {
+  //     try {
+  //       const response = await fetch(`https://crudcrud.com/api/aebab6f1cc4746f7ac3b15153ac50d00/cart${encodeURIComponent(authCtx.idToken)}`);
+  //       const data = await response.json();
+  //       if (Array.isArray(data)) {
+  //         // Assuming the data is an array of cart items with properties similar to cartCtx.items
+  //         cartCtx.setCartItems(data);
+  //       }
+  //     } catch (error) {
+  //       console.error('Error while retrieving cart items from backend:', error);
+  //     }  
+  //   };
+
+  //   getCartItemsFromBackend();
+  // },  [authCtx.idToken]);
 
   const cartItems = (
     <ul>
@@ -35,8 +76,7 @@ import CartContext from '../store/cart-context';
           amount={item.amount}
           imageUrl={item.imageUrl}
           onRemove={cartItemRemoveHandler.bind(null, item.id)}
-          onAdd={cartItemAddHandler.bind(null, item)}
-         
+          onAdd={cartItemAddHandler.bind(null, item)} 
         />
       ))}
     </ul>

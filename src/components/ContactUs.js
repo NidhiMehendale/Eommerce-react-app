@@ -1,6 +1,6 @@
 import classes from './ContactUs.module.css';
 import React , { useRef } from "react";
-import { NavLink,Navbar,Container,Nav } from "react-bootstrap";
+
 
 const ContactUs = (props) => {
   const nameRef = useRef('');
@@ -26,23 +26,8 @@ const ContactUs = (props) => {
 
    return (
   <section>
-  <Navbar bg="dark" data-bs-theme="dark">
-  <Container className="justify-content-center">
-  <Nav>
-  <NavLink href="/home" to="/home">HOME</NavLink>
-  <NavLink href="/store">STORE</NavLink>
-  <NavLink
-  href="/about"
-  to="/about">
-  ABOUT
-</NavLink>
-<NavLink href="/contactUs" to="/contactUs">CONTACTUS</NavLink>
-</Nav>
-  </Container>
-
-</Navbar>
      <h2>CONTACT US</h2>
-    <form className={classes['contact-form']} onSubmit={submitHandler}>
+    <form  className={classes.auth} onSubmit={submitHandler}>
     <div className={classes.control}>
       <label htmlFor='name'>Name</label>
       <input type='text' id='name'  ref={nameRef}/>

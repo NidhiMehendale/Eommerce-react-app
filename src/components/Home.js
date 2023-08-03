@@ -1,25 +1,8 @@
 import { Fragment } from "react";
-import Footer from "./Footer";
 import classes from './Home.module.css';
-import { Navbar,Container,Nav,NavLink } from "react-bootstrap";
 const HomePage = () => {
  return (
     <Fragment>
-    <Navbar bg="dark" data-bs-theme="dark">
-        <Container className="justify-content-center">
-        <Nav>
-        <NavLink href="/home" to="/home">HOME</NavLink>
-        <NavLink href="/store">STORE</NavLink>
-        <NavLink
-        href="/about"
-        to="/about">
-        ABOUT
-    </NavLink>
-    <NavLink href="/contactUs" to="/contactUs">CONTACTUS</NavLink>
-    </Nav>
-        </Container>
-    
-    </Navbar>
  
    <div className={classes.header}>  
      <h2 style={{textAlign:'center'}}>The Generics</h2>
@@ -67,7 +50,6 @@ const HomePage = () => {
       </div>
   
 </section>
-      <Footer />
     </Fragment>
  )
 

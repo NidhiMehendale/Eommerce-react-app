@@ -4,13 +4,12 @@
     font-weight: bold;
   }
 
-  .header{
-    height: 10em;
-    display: flex;
-    justify-content: center;
-    background-color: grey;
+  .header{ 
     color: white;
-    margin-top: 4px;
+    margin-top: 1px;
+    margin-left: 71px;
+    font-size: 25px;
+    font-weight: 400;
   }
 
   .button {

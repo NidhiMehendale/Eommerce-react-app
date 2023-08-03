@@ -3,7 +3,6 @@ import AvailableProducts from './components/AvailableProducts';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Cart from './components/Cart';
-//import CartProvider from './store/CartProvider';
 import AboutPage from './components/About';
 import { Switch, BrowserRouter as  Route } from "react-router-dom";
 import HomePage from './components/Home';
@@ -54,37 +53,37 @@ console.log("auth-login",authCtx.isLoggedIn);
     content = <p>{error}</p>;
   }
 
+ 
   return (
-    <Switch>
-    <Route path="/" exact>
-    <LoginPage />
-  </Route>
-      <Route path="/about"> 
-           <AboutPage /> 
-         </Route> 
-  
-        <Route path="/home">
-          <HomePage />
-        </Route>
-        <Route path="/login">
-         <LoginPage />
-        </Route>
-        <Route path="/contactUs">
-         <ContactUs onAddContact={addContactHandler}/>
-        </Route>
-        
-        
-      <Route path="/store">
-        <Header onShowCart={showCartHandler} /> 
-         <AvailableProducts />
-         <Footer />
-        {cartIsShown && <Cart  onClose={hideCartHandler}/>}  
-        {content}
-        </Route>
-
-      
-     </Switch>
-
+  <div>
+    {cartIsShown && <Cart  onClose={hideCartHandler}/>}  
+    <Header onShowCart={showCartHandler} /> 
+    {content}
+    <main>
+      <Switch>
+        <Route path="/" exact>
+          <AboutPage />
+       </Route>
+          <Route path="/about"> 
+              <AboutPage /> 
+          </Route> 
+            <Route path="/home">
+              <HomePage />
+            </Route>
+            <Route path="/login">
+            <LoginPage />
+            </Route>
+            <Route path="/contactUs">
+            <ContactUs onAddContact={addContactHandler}/>
+            </Route>
+          <Route path="/store">        
+            <AvailableProducts />  
+            </Route>
+         
+        </Switch>
+      </main>
+    <Footer/> 
+  </div>
 
   
   );

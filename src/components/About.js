@@ -1,13 +1,12 @@
 import React, { Fragment } from "react";
 import { Container } from "react-bootstrap";
 import classes from './About.module.css';
-import Header from "./Header";
-import Footer from "./Footer";
+
 
 const AboutPage = () => {
   return (
     <Fragment>
-    <Header />
+   
       <Container className={classes.about}>
         <h2>ABOUT</h2>
           <img 
@@ -32,7 +31,7 @@ const AboutPage = () => {
           </p>
           
       </Container>
-    <Footer />
+  
     </Fragment>
   );
 };

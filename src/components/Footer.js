@@ -9,7 +9,7 @@ const Footer = () => {
      <div>
      <footer>
      <div className={classes['footer-title']}>
-         The Generics
+          Generics
      </div>
      <div className={classes['footer-icons']}>
          <ul>
