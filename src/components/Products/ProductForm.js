@@ -1,4 +1,4 @@
-import Input from "./Imput";
+import Input from "../Cart/Input";
 import { useRef } from 'react';
 import classes from './ProductForm.module.css';
 

@@ -6,7 +6,8 @@ const ContactUs = (props) => {
   const nameRef = useRef('');
   const emailRef = useRef('');
   const phoneRef = useRef('');
-   
+  const queryRef = useRef('');
+
   const submitHandler = (event) => {
     event.preventDefault();
 
@@ -14,6 +15,7 @@ const ContactUs = (props) => {
         name: nameRef.current.value,
         email: emailRef.current.value,
         phone: phoneRef.current.value,
+        query:queryRef.current.value,
       };
     
      props.onAddContact(contact);
@@ -21,6 +23,7 @@ const ContactUs = (props) => {
      nameRef.current.value = '';
      emailRef.current.value = '';
      phoneRef.current.value = '';
+     queryRef.current.value = '';
   };
    
 
@@ -40,6 +43,10 @@ const ContactUs = (props) => {
       <label htmlFor='number'>Phone</label>
       <input type='text' id='number' ref={phoneRef} />
     </div>
+    <div className={classes.control}>
+      <label htmlFor='query'>Query</label>
+      <textarea style={{height:'90px',width:'100%'}} type='text' id='query'  ref={queryRef}/>
+   </div>
     <button className={classes.button}>Submit</button>
   </form>
   </section>

@@ -3,6 +3,7 @@ import ProductItems from "./ProductItems";
 import  './AvailableProducts.module.css';
 
 
+
 const productsArr = [
   {
     id: 1,
@@ -31,7 +32,8 @@ const productsArr = [
   },
 ];
 
-const AvailableProducts = () => {
+const AvailableProducts = (props) => {
+
   const productsList = productsArr.map(prod => (
     <ProductItems 
       key={prod.id} 

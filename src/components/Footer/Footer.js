@@ -1,8 +1,8 @@
 import React from "react";
 import classes from './Footer.module.css';
-import Image1 from '../assets/YouTube-logo.jpg';
-import Image2 from '../assets/spotify-logo.jpg';
-import Image3 from '../assets/facebook-logo.png';
+import Image1 from '../../assets/YouTube-logo.jpg';
+import Image2 from '../../assets/spotify-logo.jpg';
+import Image3 from '../../assets/facebook-logo.png';
 
 const Footer = () => {
   return (

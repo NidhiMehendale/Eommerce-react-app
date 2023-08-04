@@ -1,8 +1,8 @@
-import { useState, useRef, useContext ,useEffect} from 'react';
+import { useState, useRef, useContext} from 'react';
 import { useHistory } from 'react-router-dom';
 import classes from './login.module.css';
 import AuthContext from '../../store/auth-context';
-
+import axios from 'axios';
 
 const LoginPage = () => {
   const history = useHistory();
@@ -21,11 +21,6 @@ const LoginPage = () => {
     setIsLogin((prevState) => !prevState);
   };
 
-  useEffect(() => {
-    if (authCtx.isLoggedIn) { 
-        window.location.reload();
-    }
-  }, [authCtx.isLoggedIn]);
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -38,7 +33,6 @@ const LoginPage = () => {
     if(isLogin){
       url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCGFwS9sVAtyTS7hLCpP0SXbyDrC_YLKcg'
        
-     
     }else{
       url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCGFwS9sVAtyTS7hLCpP0SXbyDrC_YLKcg'
       
@@ -73,14 +67,30 @@ const LoginPage = () => {
       }).then(data => {
             authCtx.login(data.idToken);
             history.replace('/store');
-            console.log(data.idToken)
+           window.location.reload();
        
       })
       .catch((err) => {
           alert(err.message)
       });
+     
 
-      window.location.reload();
+      //Add to crudcrud
+      const crudcrudURL = `https://crudcrud.com/api/aebab6f1cc4746f7ac3b15153ac50d00/cart${enteredEmail}`;
+
+      axios.post(crudcrudURL)
+      .then(response => {
+        setIsLoading(false);
+        // Handle successful response (if needed)
+        console.log(response.data); // You can use the response data here
+      })
+      .catch(error => {
+        setIsLoading(false);
+        // Handle error (if needed)
+        console.error('Error posting to CRUD CRUD:', error);
+      });
+     
+     
   };
 
   return (

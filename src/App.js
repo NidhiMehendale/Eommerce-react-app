@@ -1,16 +1,17 @@
 import React,{useState , useContext}  from 'react';
-import AvailableProducts from './components/AvailableProducts';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Cart from './components/Cart';
-import AboutPage from './components/About';
+import AvailableProducts from './components/Products/AvailableProducts';
+import Footer from './components/Footer/Footer';
+import Header from './components/Headers/Header';
+import Cart from './components/Cart/Cart';
+import AboutPage from './components/Headers/About';
 import { Switch, BrowserRouter as  Route } from "react-router-dom";
-import HomePage from './components/Home';
-import ContactUs from './components/ContactUs';
+import HomePage from './components/Headers/Home';
+import ContactUs from './components/Headers/ContactUs';
 import LoginPage from './components/login/login';
 
 
 import AuthContext from './store/auth-context';
+
 
 
 function App() {
@@ -62,7 +63,7 @@ console.log("auth-login",authCtx.isLoggedIn);
     <main>
       <Switch>
         <Route path="/" exact>
-          <AboutPage />
+          <LoginPage />
        </Route>
           <Route path="/about"> 
               <AboutPage /> 
@@ -77,9 +78,12 @@ console.log("auth-login",authCtx.isLoggedIn);
             <ContactUs onAddContact={addContactHandler}/>
             </Route>
           <Route path="/store">        
-            <AvailableProducts />  
+          {authCtx.isLoggedIn && <AvailableProducts /> }
+          {!authCtx.isLoggedIn && <LoginPage />}
             </Route>
-         
+          <Route path="/logout">
+            <LoginPage />
+          </Route>
         </Switch>
       </main>
     <Footer/> 
